@@ -1,0 +1,50 @@
+services:
+  wordpress:
+    build: .
+    container_name: wordpress
+    volumes:
+      - ./wordpress:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: true
+    depends_on:
+      - db
+
+  nginx:
+    image: nginx:latest
+    container_name: wordpress_nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./wordpress:/var/www/html
+    depends_on:
+      - wordpress
+
+  db:
+    image: mysql:5.7
+    container_name: wordpress_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+#  phpmyadmin:
+#    image: phpmyadmin/phpmyadmin
+#    container_name: phpmyadmin
+#    ports:
+#      - "8081:80"
+#    environment:
+#      PMA_HOST: db
+#      MYSQL_ROOT_PASSWORD: root
+#    depends_on:
+#      - db
+
