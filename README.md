@@ -8,11 +8,6 @@ It is a base template for Wordpress projects (v6.7.2) in dockerised environments
 - [Makefile](#makefile)
 - [Contact](#contact)
 
-## Características
-- Lista de las funcionalidades principales
-- Ejemplo: "Autenticación de usuarios con JWT"
-- Ejemplo: "API RESTful con Express.js"
-
 ## Requeriments
 
 - Docker [**installed**](https://docs.docker.com/engine/install/).
