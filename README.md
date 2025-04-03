@@ -2,7 +2,7 @@
 
 It is a base template for Wordpress projects (v6.7.2) in dockerised environments. It is a MIT licensed project.
 
-## Tabla de Contenidos
+## Content
 - [Requeriments](#requeriments)
 - [Go to working](#go-to-working)
 - [Makefile](#makefile)
