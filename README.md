@@ -1,7 +1,5 @@
 # WordPress 6.7.2 with docker
 
-![Logo o imagen representativa](url-de-la-imagen.png)
-
 It is a base template for Wordpress projects (v6.7.2) in dockerised environments. It is a MIT licensed project.
 
 ## Tabla de Contenidos
